@@ -48,23 +48,23 @@ public class Exercise2 {public static int ID = 0;
     }
     private void findByCategory() {
         System.out.println("Nhập vào loại tài liệu cần tìm kiếm 1.Sách, 2.Báo, 3.Tạp chí: ");
-        int chooseCategory = sc.nextInt();
+        String chooseCategory = sc.nextLine();
         switch (chooseCategory) {
-            case 1:
+            case "1":
                 for (Document document : documentList) {
                     if (document instanceof Book) {
                         System.out.println(document);
                     }
                 }
                 break;
-            case 2:
+            case "2":
                 for (Document document : documentList) {
                     if (document instanceof Article) {
                         System.out.println(document);
                     }
                 }
                 break;
-            case 3:
+            case "3":
                 for (Document document : documentList) {
                     if (document instanceof Magazine) {
                         System.out.println(document);
@@ -108,14 +108,14 @@ public class Exercise2 {public static int ID = 0;
         System.out.println("--- 2. Thêm Báo ---");
         System.out.println("--- 3. Thêm Tạp chí ---");
         System.out.println("----------------------------------------------------");
-        int choose1 = sc.nextInt();
+        String choose1 = sc.nextLine();
         sc.nextLine();
         System.out.println("Nhập vào tên nhà xuất bản: ");
         String publisher = sc.next();
         System.out.println("Nhập vào số bản phát hành: ");
         int numRelease = sc.nextInt();
         switch (choose1) {
-            case 1:
+            case "1":
                 System.out.println("Nhập vào tên tác giả: ");
                 String authorName = sc.next();
                 System.out.println("Nhập vào số trang: ");
@@ -124,7 +124,7 @@ public class Exercise2 {public static int ID = 0;
                 Document book = new Book(ID, publisher, numRelease,authorName, numPage);
                 documentList.add(book);
                 break;
-            case 2:
+            case "2":
                 System.out.println("Nhập vào ngày phát hành: ");
                 int day = sc.nextInt();
                 System.out.println("Nhập vào tháng phát hành: ");
@@ -136,7 +136,7 @@ public class Exercise2 {public static int ID = 0;
                 Document artice = new Article(ID, publisher, numRelease, dayReleaseArticle);
                 documentList.add(artice);
                 break;
-            case 3:
+            case "3":
                 System.out.println("Nhập vào số phát hành: ");
                 int idReleaseMagazine = sc.nextInt();
                 System.out.println("Nhập vào ngày phát hành: ");
